@@ -48,7 +48,7 @@ app.post("/", function (req, res) {
     auth: process.env.MAILCHIMP_API_KEY,
   };
   // this api url we get from the mailchimp api
-  const url = "https://us14.api.mailchimp.com/3.0/lists/dc93a7412e";
+  const url = process.env.MAILCHIMP_LIST_URL;
   //converting the data which we are sending inti JSON form
   var JSON_Data = JSON.stringify(data);
   // here we are getting the response from the mailchimp server
@@ -74,8 +74,3 @@ app.post("/", function (req, res) {
 app.post("/failure", function (req, res) {
   res.redirect("/");
 });
-
-// api key
-// 704afe88f50e5cbe0763d87b8f0181c0-us14
-// list id
-// dc93a7412e
